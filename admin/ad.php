@@ -14,6 +14,6 @@ $query = mysql_query( "SELECT * FROM 	personIdenteficztion" );
 
 while ( $r = mysql_fetch_assoc( $query ) )
   if ($adminPass==$r['persinPassword'] && $r['persinPassword']=="admin" ){
-echo "string";
+header('Location:http://autoaaa.ru/admin/editlistuser');
 }
  ?>
