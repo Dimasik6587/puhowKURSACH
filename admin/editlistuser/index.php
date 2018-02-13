@@ -45,10 +45,25 @@
     </div>
     </div>
   </div>
+  <table class="table">
+    <tr><th>Ключ</th><th>Имя</th></tr>
+<?php
+$adminPass= $_POST['passAdmin'];
+$keyBuf= $_POST['pirsinid'];
+$adminPass= $_POST['passAdmin'];
+$host = '127.0.0.1'; // адрес сервера
+$database = 'IDENTEFICATION'; // имя базы данных
+$user = 'root'; // имя пользователя
+$password = ''; // пароль
 
+$link = mysql_connect($host, $user, $password) or die("Ошибка " . mysqli_error($link));
+mysql_select_db($database);
+$query = mysql_query( "SELECT * FROM 	personIdenteficztion" );
 
-
-
+while ( $r = mysql_fetch_assoc( $query ) )
+      echo '<tr>','<td>',$r['personKey'],'</td>','<td>', $r['personName'] ,'</td>','</tr>';
+?>
+       </table>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

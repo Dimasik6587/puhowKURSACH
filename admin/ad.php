@@ -1,5 +1,4 @@
 <?php
-$trig=0;
 $adminPass= $_POST['passAdmin'];
 $keyBuf= $_POST['pirsinid'];
 $adminPass= $_POST['passAdmin'];
@@ -14,6 +13,6 @@ $query = mysql_query( "SELECT * FROM 	personIdenteficztion" );
 
 while ( $r = mysql_fetch_assoc( $query ) )
   if ($adminPass==$r['persinPassword'] && $r['persinPassword']=="admin" ){
-header('Location:http://autoaaa.ru/admin/editlistuser');
+header('Location:http://autoaaa.ru/admin/editlistuser/');
 }
  ?>
