@@ -46,7 +46,7 @@
     </div>
   </div>
   <table class="table">
-    <tr><th>Ключ</th><th>Имя</th></tr>
+    <tr><th>Ключ</th><th>Тип пользователя</th><th>Имя</th></tr>
 <?php
 $adminPass= $_POST['passAdmin'];
 $keyBuf= $_POST['pirsinid'];
@@ -61,7 +61,7 @@ mysql_select_db($database);
 $query = mysql_query( "SELECT * FROM 	personIdenteficztion" );
 
 while ( $r = mysql_fetch_assoc( $query ) )
-      echo '<tr>','<td>',$r['personKey'],'</td>','<td>', $r['personName'] ,'</td>','</tr>';
+      echo '<tr>','<td>',$r['personKey'],'</td>','<td>',$r['personType'],'</td>','<td>', $r['personName'] ,'</td>','</tr>';
 ?>
        </table>
 
